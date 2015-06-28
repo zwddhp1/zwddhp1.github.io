@@ -1,0 +1,99 @@
+
+  
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>亲爱哒倩倩</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+            <span class="comments"> Dear QianQian: </span><br>
+            <br>
+			<span class="comments"> You say that you love rain, </span><br>
+            <span class="placeholder"><span class="comments">but you open your umbrella when it rains.</span><br>
+            <span class="comments"> You say that you love the sun, </span><br>
+            <span class="placeholder"><span class="comments">but you find a shadow spot when the sun shines.</span><br>
+            <span class="comments"> You say that you love the wind, </span><br>
+            <span class="placeholder"><span class="comments">but you close your windows when wind blows.</span><br>
+            <span class="comments"> This is why I am afraid, </span><br>
+            <span class="placeholder"><span class="comments">because you say that you love me too.</span><br>
+			<br>
+			<br>
+            <span class="comments"> Young fault lasts for life...</span><br>
+            <span class="placeholder"><span class="comments">Baby, I love you forever!</span><br>
+		</span></span></span></span></span></div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					亲爱哒，这是我被你第一次击中的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					遇见你，然后遇见我自己。<br>
+					<div class="signature">包子</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		<a href="http://wangqianqian.cc">@Alonso Zhang</a><br>
+		
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2014, 9, 15);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
+</body>
+</html>
+  
